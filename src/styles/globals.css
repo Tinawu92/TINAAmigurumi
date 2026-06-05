@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #F7F3EE;
+  --color-surface: #FFFFFF;
+  --color-ink: #1A1612;
+  --color-muted: #EDE8E1;
+  --color-terracotta: #C8603A;
+  --color-sage: #6B8F71;
+  --color-gold: #C49A3C;
+  --color-blush: #E8C4B0;
+  --color-primary: #1A1612;
+  --color-secondary: #5C5148;
+  --color-t-muted: #9C9189;
+  --color-inverse: #F7F3EE;
+}
+
+:root {
+  --bg-canvas: #F7F3EE;
+  --bg-surface: #FFFFFF;
+  --bg-ink: #1A1612;
+  --bg-muted: #EDE8E1;
+  --brand-terracotta: #C8603A;
+  --brand-sage: #6B8F71;
+  --brand-gold: #C49A3C;
+  --brand-blush: #E8C4B0;
+  --text-primary: #1A1612;
+  --text-secondary: #5C5148;
+  --text-muted: #9C9189;
+  --text-inverse: #F7F3EE;
+  --font-playfair: "Playfair Display", serif;
+  --font-dm-sans: "DM Sans", sans-serif;
+  --font-instrument: "Instrument Serif", serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html { background-color: var(--bg-canvas); }
+body { font-family: var(--font-dm-sans); color: var(--text-primary); }
+
+.text-display { font-size: clamp(52px, 9vw, 110px); }
+.text-hero { font-size: clamp(36px, 6vw, 72px); }
+.text-title { font-size: clamp(24px, 4vw, 48px); }
+.section-gap { padding-top: clamp(80px, 12vw, 140px); padding-bottom: clamp(80px, 12vw, 140px); }
+
+@layer base {
+  * {
+    @apply border-canvas;
+  }
+}
