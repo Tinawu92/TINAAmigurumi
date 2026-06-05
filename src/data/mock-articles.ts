@@ -1,0 +1,58 @@
+export const articles = [
+  {
+    id: 1,
+    slug: "how-to-price-your-amigurumi",
+    title: "How to Price Your Amigurumi: A Complete Guide",
+    excerpt:
+      "Pricing handmade goods can be tricky. Learn how to calculate your labor costs, factor in materials, and set prices that reflect the true value of your craft.",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800",
+    category: "Business Tips",
+    author: "Aiko Yamamoto",
+    authorAvatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200",
+    date: "May 28, 2026",
+    readTime: "8 min read",
+    featured: true,
+  },
+  {
+    id: 2,
+    slug: "international-shipping-for-handmade-goods",
+    title: "International Shipping for Handmade Goods: What You Need to Know",
+    excerpt:
+      "Shipping internationally doesn't have to be scary. We break down customs, tracking options, insurance, and how to package your precious cargo safely.",
+    image: "https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?w=800",
+    category: "Logistics",
+    author: "Marcus Chen",
+    authorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200",
+    date: "May 21, 2026",
+    readTime: "6 min read",
+    featured: false,
+  },
+  {
+    id: 3,
+    slug: "building-your-brand-as-an-indie-maker",
+    title: "Building Your Brand as an Independent Maker",
+    excerpt:
+      "Your brand is more than just a logo. Discover how to tell your story, create a cohesive visual identity, and connect authentically with your audience.",
+    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800",
+    category: "Branding",
+    author: "Sofia Rodriguez",
+    authorAvatar: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=200",
+    date: "May 14, 2026",
+    readTime: "10 min read",
+    featured: false,
+  },
+  {
+    id: 4,
+    slug: "2025-crochet-trends-what-materials-are-hot",
+    title: "2025 Crochet Trends: Materials & Techniques That Are Hot Right Now",
+    excerpt:
+      "From sustainable cotton blends to holographic yarn, discover what's trending in the amigurumi world and how to incorporate new techniques into your work.",
+    image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=800",
+    category: "Trends",
+    author: "James Kim",
+    authorAvatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200",
+    date: "May 7, 2026",
+    readTime: "5 min read",
+    featured: false,
+  },
+];

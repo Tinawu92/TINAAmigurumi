@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import FadeUp from "@/components/animations/FadeUp";
-import { articles } from "@/app/blog/page";
+import { articles } from "@/data/mock-articles";
 
 export default function BlogArticlePage({ params }: { params: { slug: string } }) {
   const article = articles.find((a) => a.slug === params.slug);
