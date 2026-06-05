@@ -8,7 +8,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Amigumi Market — Handcrafted Amigurumi Dolls",
+  title: "TINAAmigurumi — Handcrafted Amigurumi Dolls",
   description: "Discover one-of-a-kind Amigurumi dolls from independent makers worldwide. Each piece uniquely crafted, never mass-produced.",
   viewport: "width=device-width, initial-scale=1",
 };

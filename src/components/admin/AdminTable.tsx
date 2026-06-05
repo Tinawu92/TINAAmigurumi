@@ -9,16 +9,16 @@ interface TableColumn {
 
 interface TableRow {
   id: string | number;
-  [key: string]: string | number | boolean;
+  [key: string]: string | number | boolean | undefined;
 }
 
 interface AdminTableProps {
   columns: TableColumn[];
-  data: TableRow[];
+  data: Record<string, any>[];
   searchPlaceholder?: string;
   onAdd?: () => void;
-  onEdit?: (item: TableRow) => void;
-  onDelete?: (item: TableRow) => void;
+  onEdit?: (item: any) => void;
+  onDelete?: (item: any) => void;
   addLabel?: string;
 }
 
@@ -42,14 +42,13 @@ export default function AdminTable({
     const q = search.toLowerCase();
     setFiltered(
       data.filter((item) =>
-        columns.some((col) => String(item[col.key]).toLowerCase().includes(q))
+        columns.some((col) => String(item[col.key] ?? "").toLowerCase().includes(q))
       )
     );
   }, [search, data, columns]);
 
   return (
     <div>
-      {/* Toolbar */}
       <div className="flex flex-col sm:flex-row gap-4 mb-6">
         <div className="relative flex-1 max-w-xs">
           <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--text-muted)]" />
@@ -72,7 +71,6 @@ export default function AdminTable({
         )}
       </div>
 
-      {/* Table */}
       <div className="bg-[var(--bg-surface)] rounded-2xl border border-[var(--bg-muted)] overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full">
@@ -101,18 +99,29 @@ export default function AdminTable({
                   </td>
                 </tr>
               ) : (
-                filtered.map((item, i) => (
-                  <tr key={item.id} className="border-b border-[var(--bg-muted)] last:border-0 hover:bg-[var(--bg-muted)] hover:bg-opacity-30 transition-colors">
+                filtered.map((item) => (
+                  <tr
+                    key={String(item.id)}
+                    className="border-b border-[var(--bg-muted)] last:border-0 hover:bg-[var(--bg-muted)] hover:bg-opacity-30 transition-colors"
+                  >
                     {columns.map((col) => (
                       <td key={col.key} className="px-6 py-4 text-[14px] text-[var(--text-primary)]">
-                        {col.key === "image" ? (
+                        {col.key === "image" || col.key === "avatar" ? (
                           item[col.key] ? (
-                            <img src={String(item[col.key])} alt="" className="w-12 h-12 object-cover rounded-lg" />
+                            <img
+                              src={String(item[col.key])}
+                              alt=""
+                              className="w-12 h-12 object-cover rounded-lg"
+                            />
                           ) : (
                             <span className="text-[var(--text-muted)]">-</span>
                           )
+                        ) : col.key === "isVerified" ? (
+                          <span className={item[col.key] ? "text-green-500" : "text-gray-400"}>
+                            {item[col.key] ? "是" : "否"}
+                          </span>
                         ) : (
-                          String(item[col.key])
+                          String(item[col.key] ?? "-")
                         )}
                       </td>
                     ))}
